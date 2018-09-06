@@ -25,8 +25,6 @@
 # obj=MixinsData()
 # print(obj)
 
-#PONER EL CONSTRUCTOR ES OPCIONAL, PERO ES RECOMENDABLE PONERLO, PARA INDICAR LOS PARAMETROS,
-#DECLARA EL METODO CONTRUCTOR EN PYTHON SE DEFINEN CON LA PALABRA DEF y el __init__ (dos guiones bajos antes de despues del init) es el contructor oficial de la clase
 
 class MixinsData(object):
 	def __init__(
