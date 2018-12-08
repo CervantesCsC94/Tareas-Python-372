@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Lista Usuarios{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript">
+		
+	$(document).ready(function(){
+		console.log("FUNCIONA")
+	$.ajax({
+			url: "/api/lista_usuarios/",
+			method: "GET",
+			success: function(data){
+				//console.log(data)
+				$.each(data,function(key,value){
+					console.log(value)
+					//var tweetKey=key
+					var tweetUser=value.nombre
+					var tweetContent = value.timestap
+					$("#tweet-container").append("<li>"+tweetUser+"<br>"+tweetContent+"</li>")
+
+
+				})
+			},
+			error: function(data){
+				console.log("error")
+				console.log(data)
+			}
+
+		})	
+	});	
+
+</script>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div style="margin-top: 50px;">
+	<ul id="tweet-container">
+		
+	</ul>
+        
+</div>
+
+{% endblock %}
